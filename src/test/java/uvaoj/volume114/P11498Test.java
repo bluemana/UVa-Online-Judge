@@ -3,7 +3,6 @@ package uvaoj.volume114;
 import java.io.BufferedReader;
 import java.io.StringReader;
 import java.io.StringWriter;
-import java.io.Writer;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -34,7 +33,7 @@ public class P11498Test {
 				"SO\n" +
 				"SE\n";
 		BufferedReader reader = new BufferedReader(new StringReader(input));
-		Writer writer = new StringWriter();
+		StringWriter writer = new StringWriter();
 		P11498.solve(reader, writer);
 		Assert.assertArrayEquals(new String[] {expectedOutput}, new String[] {writer.toString()});
 	}
