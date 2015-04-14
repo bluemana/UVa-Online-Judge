@@ -7,6 +7,8 @@ import java.io.StringWriter;
 import org.junit.Assert;
 import org.junit.Test;
 
+import uvaoj.util.FlushableStringWriter;
+
 public class P11727Test {
 
 	@Test
@@ -21,7 +23,7 @@ public class P11727Test {
 				"Case 2: 2500\n" +
 				"Case 3: 1500\n";
 		BufferedReader reader = new BufferedReader(new StringReader(input));
-		StringWriter writer = new StringWriter();
+		StringWriter writer = new FlushableStringWriter();
 		P11727.solve(reader, writer);
 		Assert.assertArrayEquals(new String[] {expectedOutput}, new String[] {writer.toString()});
 	}
@@ -36,7 +38,7 @@ public class P11727Test {
 				"Case 1: 3000\n" +
 				"Case 2: 1450\n";
 		BufferedReader reader = new BufferedReader(new StringReader(input));
-		StringWriter writer = new StringWriter();
+		StringWriter writer = new FlushableStringWriter();
 		P11727.solve(reader, writer);
 		Assert.assertArrayEquals(new String[] {expectedOutput}, new String[] {writer.toString()});
 	}
@@ -53,7 +55,7 @@ public class P11727Test {
 				"Case 2: 1001\n" +
 				"Case 3: 1900\n";
 		BufferedReader reader = new BufferedReader(new StringReader(input));
-		StringWriter writer = new StringWriter();
+		StringWriter writer = new FlushableStringWriter();
 		P11727.solve(reader, writer);
 		Assert.assertArrayEquals(new String[] {expectedOutput}, new String[] {writer.toString()});
 	}

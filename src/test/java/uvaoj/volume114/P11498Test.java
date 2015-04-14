@@ -7,6 +7,8 @@ import java.io.StringWriter;
 import org.junit.Assert;
 import org.junit.Test;
 
+import uvaoj.util.FlushableStringWriter;
+
 public class P11498Test {
 
 	@Test
@@ -33,7 +35,7 @@ public class P11498Test {
 				"SO\n" +
 				"SE\n";
 		BufferedReader reader = new BufferedReader(new StringReader(input));
-		StringWriter writer = new StringWriter();
+		StringWriter writer = new FlushableStringWriter();
 		P11498.solve(reader, writer);
 		Assert.assertArrayEquals(new String[] {expectedOutput}, new String[] {writer.toString()});
 	}

@@ -27,6 +27,7 @@ class P11172 {
 			Relation result = P11172.compare(i1, i2);
 			writer.write(result + "\n");
 		}
+		writer.flush();
 	}
 	
 	private static Relation compare(int i1, int i2) {
