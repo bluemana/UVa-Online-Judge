@@ -1,16 +1,16 @@
 package uvaoj.volume117;
 
-import java.io.BufferedReader;
-import java.io.StringReader;
-import java.io.StringWriter;
-
-import org.junit.Assert;
 import org.junit.Test;
 
-import uvaoj.util.FlushableStringWriter;
+import uvaoj.UvaTest;
 
-public class P11727Test {
+public class P11727Test extends UvaTest {
 
+	@Override
+	protected Class<?> getTestedClass() {
+		return P11727.class;
+	}
+	
 	@Test
 	public void testExample() throws Exception {
 		String input = 
@@ -22,14 +22,11 @@ public class P11727Test {
 				"Case 1: 2000\n" +
 				"Case 2: 2500\n" +
 				"Case 3: 1500\n";
-		BufferedReader reader = new BufferedReader(new StringReader(input));
-		StringWriter writer = new FlushableStringWriter();
-		P11727.solve(reader, writer);
-		Assert.assertArrayEquals(new String[] {expectedOutput}, new String[] {writer.toString()});
+		test(input, expectedOutput);
 	}
 	
 	@Test
-	public void testThirdValue() throws Exception {
+	public void p11727_3rdValueWithinValues_3rdValue() throws Exception {
 		String input = 
 				"2\n" +
 				"1000 10000 3000\n" +
@@ -37,26 +34,28 @@ public class P11727Test {
 		String expectedOutput =
 				"Case 1: 3000\n" +
 				"Case 2: 1450\n";
-		BufferedReader reader = new BufferedReader(new StringReader(input));
-		StringWriter writer = new FlushableStringWriter();
-		P11727.solve(reader, writer);
-		Assert.assertArrayEquals(new String[] {expectedOutput}, new String[] {writer.toString()});
+		test(input, expectedOutput);
 	}
 	
 	@Test
-	public void testEqualValues() throws Exception {
+	public void p11727_2ValuesEqual_OneOfValues() throws Exception {
 		String input = 
-				"3\n" +
-				"1000 1000 1000\n" +
+				"2\n" +
 				"1001 1001 1450\n" +
 				"1900 1500 1900\n";
 		String expectedOutput =
-				"Case 1: 1000\n" +
-				"Case 2: 1001\n" +
-				"Case 3: 1900\n";
-		BufferedReader reader = new BufferedReader(new StringReader(input));
-		StringWriter writer = new FlushableStringWriter();
-		P11727.solve(reader, writer);
-		Assert.assertArrayEquals(new String[] {expectedOutput}, new String[] {writer.toString()});
+				"Case 1: 1001\n" +
+				"Case 2: 1900\n";
+		test(input, expectedOutput);
+	}
+	
+	@Test
+	public void p11727_AllValuesEqual_OneOfValues() throws Exception {
+		String input = 
+				"1\n" +
+				"1000 1000 1000\n";
+		String expectedOutput =
+				"Case 1: 1000\n";
+		test(input, expectedOutput);
 	}
 }

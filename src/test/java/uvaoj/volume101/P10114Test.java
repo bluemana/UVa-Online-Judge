@@ -1,16 +1,16 @@
 package uvaoj.volume101;
 
-import java.io.BufferedReader;
-import java.io.StringReader;
-import java.io.StringWriter;
-
-import org.junit.Assert;
 import org.junit.Test;
 
-import uvaoj.util.FlushableStringWriter;
+import uvaoj.UvaTest;
 
-public class P10114Test {
+public class P10114Test extends UvaTest {
 
+	@Override
+	protected Class<?> getTestedClass() {
+		return P10114.class;
+	}
+	
 	@Test
 	public void testExample() throws Exception {
 		String input =
@@ -30,42 +30,33 @@ public class P10114Test {
 				"4 months\n" +
 				"1 month\n" +
 				"49 months\n";
-		BufferedReader reader = new BufferedReader(new StringReader(input));
-		StringWriter writer = new FlushableStringWriter();
-		P10114.solve(reader, writer);
-		Assert.assertArrayEquals(new String[] {expectedOutput}, new String[] {writer.toString()});
+		test(input, expectedOutput);
 	}
 	
 	@Test
-	public void test_NoLoan_0Months() throws Exception {
+	public void p10114_NoLoan_0Months() throws Exception {
 		String input =
 				"0 1000 0 1\n" +
 				"0 0.10\n" +
 				"-99 0 0 0\n";
 		String expectedOutput =
 				"0 months\n";
-		BufferedReader reader = new BufferedReader(new StringReader(input));
-		StringWriter writer = new FlushableStringWriter();
-		P10114.solve(reader, writer);
-		Assert.assertArrayEquals(new String[] {expectedOutput}, new String[] {writer.toString()});
+		test(input, expectedOutput);
 	}
 	
 	@Test
-	public void test_InitialCarValueGreaterThanLoan_0Months() throws Exception {
+	public void p10114_InitialCarValueGreaterThanLoan_0Months() throws Exception {
 		String input =
 				"2 15000 500 1\n" +
 				"0 0.10\n" +
 				"-99 0 0 0\n";
 		String expectedOutput =
 				"0 months\n";
-		BufferedReader reader = new BufferedReader(new StringReader(input));
-		StringWriter writer = new FlushableStringWriter();
-		P10114.solve(reader, writer);
-		Assert.assertArrayEquals(new String[] {expectedOutput}, new String[] {writer.toString()});
+		test(input, expectedOutput);
 	}
 	
 	@Test
-	public void test_IrrationalRepayment_Calculated() throws Exception {
+	public void p10114_IrrationalRepayment_Calculated() throws Exception {
 		String input =
 				"36 2000 10000 4\n" +
 				"0 .2\n" +
@@ -80,9 +71,6 @@ public class P10114Test {
 		String expectedOutput =
 				"11 months\n" +
 				"27 months\n";
-		BufferedReader reader = new BufferedReader(new StringReader(input));
-		StringWriter writer = new FlushableStringWriter();
-		P10114.solve(reader, writer);
-		Assert.assertArrayEquals(new String[] {expectedOutput}, new String[] {writer.toString()});
+		test(input, expectedOutput);
 	}
 }

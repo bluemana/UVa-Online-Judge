@@ -1,16 +1,16 @@
 package uvaoj.volume111;
 
-import java.io.BufferedReader;
-import java.io.StringReader;
-import java.io.StringWriter;
-
-import org.junit.Assert;
 import org.junit.Test;
 
-import uvaoj.util.FlushableStringWriter;
+import uvaoj.UvaTest;
 
-public class P11172Test {
+public class P11172Test extends UvaTest {
 
+	@Override
+	protected Class<?> getTestedClass() {
+		return P11172.class;
+	}
+	
 	@Test
 	public void testExample() throws Exception {
 		String input =
@@ -22,9 +22,6 @@ public class P11172Test {
 				"<\n" +
 				">\n" +
 				"=\n";
-		BufferedReader reader = new BufferedReader(new StringReader(input));
-		StringWriter writer = new FlushableStringWriter();
-		P11172.solve(reader, writer);
-		Assert.assertArrayEquals(new String[] {expectedOutput}, new String[] {writer.toString()});
+		test(input, expectedOutput);
 	}
 }
